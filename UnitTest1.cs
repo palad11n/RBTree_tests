@@ -1,10 +1,10 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Black_Red_tree.Common;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Black_Red_tree.UnitTestBRTree
+namespace Black_Red_tree.UnitTests
 {
     [TestClass]
-    public class UnitTestsTree
+    public class UnitTest1
     {
         private int[] Nodes = { 20, 23, 26, 19 };
         private RBTree.Node ExpectedRoot = new RBTree.Node();
@@ -12,7 +12,6 @@ namespace Black_Red_tree.UnitTestBRTree
         [TestMethod]
         public void AddNode_CheckValue()
         {
-            //#1
             SetExpectedRoot();
             ITree tree = new RBTree();
             for (int i = 0; i < Nodes.Length; i++)
@@ -29,7 +28,6 @@ namespace Black_Red_tree.UnitTestBRTree
         [TestMethod]
         public void RemoveNode_CheckFullRemove()
         {
-            //#2
             ITree tree = new RBTree();
             for (int i = 0; i < Nodes.Length; i++)
             {
@@ -41,7 +39,6 @@ namespace Black_Red_tree.UnitTestBRTree
         [TestMethod]
         public void FindMaxMin_CheckValue()
         {
-            //#3
             ITree tree = new RBTree();
             for (int i = 0; i < Nodes.Length; i++)
             {
@@ -54,7 +51,6 @@ namespace Black_Red_tree.UnitTestBRTree
         [TestMethod]
         public void GetColorNodeByKey_CheckColor()
         {
-            //#4
             ITree tree = new RBTree();
             for (int i = 0; i < Nodes.Length; i++)
             {
@@ -69,7 +65,6 @@ namespace Black_Red_tree.UnitTestBRTree
         [TestMethod]
         public void FindNextPrev_CheckValue()
         {
-            //#5
             ITree tree = new RBTree();
             for (int i = 0; i < Nodes.Length; i++)
             {
@@ -85,7 +80,6 @@ namespace Black_Red_tree.UnitTestBRTree
         [TestMethod]
         public void FindMinMax_EmptyTree_CheckNull()
         {
-            //#6
             ITree tree = new RBTree();
             Assert.AreEqual(null, tree.MaxNode());
             Assert.AreEqual(null, tree.MinNode());
@@ -94,7 +88,6 @@ namespace Black_Red_tree.UnitTestBRTree
         [TestMethod]
         public void RemoveNode_NewRoot_CheckNullParent()
         {
-            //#7
             ITree tree = new RBTree();
             int[] nodes = { 25, 8, 52, 46, 22, 78 };
             for (int i = 0; i < nodes.Length; i++)
